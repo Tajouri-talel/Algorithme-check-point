@@ -1,0 +1,25 @@
+ALGORITHM what_is_in_a_sentence
+VAR 
+lcount, wcount, vcount := 0:integer;
+sentence : string;
+
+BEGIN
+write " write a sentence that ends with '.' ";
+REPEAT 
+READ (sentence)
+UNTIL (right(sentence, 1) = ".") // right fonction predifinie
+
+lcount = len(sentence) // len fonction predifinie
+FOR i FROM 1 TO lcount DO
+IF mid ( sentence, i, 1) =" " THEN 
+wcount ++
+END_IF
+IF sentence[i] in ("a","e","i","o","u") THEN
+vcount := vcount+1
+END_IF
+END_FOR
+write (lcount)
+write (wcount)
+write (vcount)
+END 
+
